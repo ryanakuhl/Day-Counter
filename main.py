@@ -19,7 +19,7 @@ def return_day(y, z):
     else:
         return return_day(y + timedelta(days=1), z)
 
-def vaca(birthday):
-    return len([x for x in daterange(date.today(), birthday) if x not in holidays and x.weekday() < 5 and x not in vacation])
+def vaca(return_date):
+    return len([x for x in daterange(date.today(), return_date) if x not in holidays and x.weekday() < 5 and x not in vacation])
 
 easygui.msgbox(msg=str(vaca(date(2020, 9, 28))) + " work days until return (Sept 28)")
